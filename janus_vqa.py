@@ -27,11 +27,10 @@ class JanusVQA:
     def __init__(
         self, 
         model_path: str = "deepseek-ai/Janus-Pro-7B",
-        device: Optional[str] = None,
         question_field: str = "question",
         answer_field: str = "answer"
     ):
-        self.device = self._get_device(device)
+        self.device = self._get_device()
         self.question_field = question_field
         self.answer_field = answer_field
         
@@ -45,10 +44,8 @@ class JanusVQA:
         )
         self.vl_gpt = self.vl_gpt.to(torch.bfloat16).to(self.device).eval()
 
-    def _get_device(self, device: Optional[str] = None) -> torch.device:
+    def _get_device(self) -> torch.device:
         """Determine the appropriate device to use."""
-        if device is not None:
-            return torch.device(device)
         
         if torch.cuda.is_available():
             return torch.device("cuda")
@@ -126,7 +123,6 @@ def process_dataset(
     dataset: fo.Dataset, 
     question: str,
     model_path: str = "deepseek-ai/Janus-Pro-7B",
-    device: Optional[str] = None,
     question_field: str = "question",
     answer_field: str = "answer"
 ):
@@ -144,7 +140,6 @@ def process_dataset(
     # Initialize processor
     processor = JanusVQA(
         model_path=model_path, 
-        device=device,
         question_field=question_field,
         answer_field=answer_field
     )
@@ -159,7 +154,6 @@ def process_dataset(
             
             # Store the answer
             sample[answer_field] = answer
-            sample.save()
         except Exception as e:
             print(f"Error processing sample {sample.id}: {str(e)}")
     
