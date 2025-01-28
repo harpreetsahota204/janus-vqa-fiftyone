@@ -7,7 +7,7 @@ Janus-Pro is an advanced multimodal model designed for both **multimodal underst
 
 The plugin provides a seamless interface to Janus Pro's visual question understanding capabilities within FiftyOne, offering:
 
-* vision-language tasks
+* Vision-language tasks
 
 * Hardware acceleration (CUDA/MPS) when available
 
@@ -15,6 +15,7 @@ The plugin provides a seamless interface to Janus Pro's visual question understa
 
 * Full integration with FiftyOne's Dataset and UI
 
+🙏🏽 Issues and contributions are welcome!
 
 ## Installation
 
@@ -31,28 +32,22 @@ Then, install the plugin:
 fiftyone plugins download https://github.com/harpreetsahota204/janus-vqa-fiftyone
 ```
 
-
 ## Usage in FiftyOne App
 
 You can use Janus directly through the FiftyOne App:
 
 1. Launch the FiftyOne App with your dataset
-
 2. Open the "Operators Browser" (click the icon or press `)
 3. Search for "Run Janus"
-4. Configure the parameters based on your chosen task:
+4. Configure the parameters based on your chosen task
+
+ℹ Note: This plugin assumes you are using a GPU with can support `bfloat16`.
 
 ### Available Tasks:
 
 Janus-Pro excels in both **multimodal understanding** and **text-to-image generation**. It achieves this by decoupling the visual encoding for these two tasks, which mitigates the conflict between them.
 
-**NOTE:** This plugin only supports the multimodal understanding tasks.
-
-Specifically, Janus-Pro demonstrates superior performance in the following areas:
-
-Janus-Pro demonstrates strong capabilities in various types of multimodal understanding, as evidenced by its performance on several benchmarks. The model excels at tasks that require integrating and interpreting information from both image and text inputs.
-
-Specific areas where Janus-Pro shows proficiency include:
+**NOTE:** This plugin only supports the multimodal understanding tasks. Janus-Pro demonstrates superior performance in the following areas:
 
 *   **General Image Understanding**: Janus-Pro exhibits impressive comprehension when handling inputs from various contexts. This suggests a broad understanding of image content and its relationship to textual descriptions.
 
@@ -75,14 +70,14 @@ Once installed, you can use the operator programmatically:
 ```python
 import fiftyone.operators as foo
 
-janus_operator = foo.get_operator("@harpreetsahota/janus_vqa/janus_vqa")
+janus_vqa = foo.get_operator("@harpreetsahota/janus_vqa/janus_vqa")
 ```
 
 
 # For vision language tasks
 
 ```python
-janus_operator(
+janus_vqa(
     dataset,
     model_path="deepseek-ai/Janus-Pro-1B",
     question="Write a funny song about this image",
@@ -96,7 +91,7 @@ janus_operator(
 If using delegated operation in an notebook, first run: `fiftyone delegated launch` and then use `await` with any of the operations.
 
 ```python
-await janus_operator(
+await janus_vqa(
     dataset,
     model_path="deepseek-ai/Janus-Pro-1B",
     question="Write a funny song about this image",
