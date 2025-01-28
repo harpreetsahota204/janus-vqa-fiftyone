@@ -29,12 +29,21 @@ If you haven't already, install FiftyOne and required dependencies:
 pip install -U fiftyone transformers torch git+https://github.com/deepseek-ai/Janus.git
 ```
 
-
 Then, install the plugin:
 
 ```bash
 fiftyone plugins download https://github.com/harpreetsahota204/janus-vqa-fiftyone
 ```
+
+In order to use the plugin you need to have the following enviornment variable set:
+
+```python
+import os
+
+os.environ['FIFTYONE_ALLOW_LEGACY_ORCHESTRATORS'] = 'true'
+```
+
+It's recommended to use delegated operations, you can launch a delegated service by opening your terminal and running the following: `fiftyone delegated launch`
 
 ## Usage in FiftyOne App
 
