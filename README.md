@@ -75,9 +75,7 @@ Specific areas where Janus-Pro shows proficiency include:
 
 The model's ability to perform well on these varied benchmarks highlights its versatility in handling a range of multimodal understanding tasks. While Janus-Pro shows strong performance in multimodal understanding, it is noted that the input resolution is limited to 384 × 384, which can affect its performance in fine-grained tasks such as OCR.
 
-
-The architecture of Janus-Pro involves independent encoding methods to convert raw inputs into features, which are then processed by a unified autoregressive transformer. For multimodal understanding, it uses the SigLIP encoder, and for visual generation, it uses a VQ tokenizer.
-
+Whatever the task you are looking for, just pass it in to the `question` parameter in the operator or the UI.
 
 ## Operator Usage via SDK
 
@@ -90,7 +88,7 @@ janus_operator = foo.get_operator("@harpreetsahota/janus_vqa/janus_vqa")
 ```
 
 
-# For image captioning
+# For vision language tasks
 
 ```python
 janus_operator(
