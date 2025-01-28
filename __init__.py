@@ -33,7 +33,7 @@ def _handle_calling(
 # Define available models
 JANUS_MODELS = {
     "deepseek-ai/Janus-Pro-7B": "Janus Pro 7B",
-    "deepseek-ai/Janus-Base-7B": "Janus Base 7B",
+    "deepseek-ai/Janus-Pro-1B": "Janus Base 1B",
 }
 
 class JanusVQAOperator(foo.Operator):
@@ -59,7 +59,7 @@ class JanusVQAOperator(foo.Operator):
             "model_path",
             values=model_dropdown.values(),
             label="Model",
-            default="deepseek-ai/Janus-Pro-1B",
+            default="Janus-Pro-1B",
             description="Select from one of the available Janus models",
             view=model_dropdown,
             required=True
