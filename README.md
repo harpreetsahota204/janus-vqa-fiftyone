@@ -54,8 +54,6 @@ You can use Janus directly through the FiftyOne App:
 3. Search for "Run Janus"
 4. Configure the parameters based on your chosen task
 
-ℹ Note: This plugin assumes you are using a GPU with can support `bfloat16`.
-
 ### Available Tasks:
 
 Janus-Pro excels in both **multimodal understanding** and **text-to-image generation**. It achieves this by decoupling the visual encoding for these two tasks, which mitigates the conflict between them.
