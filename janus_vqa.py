@@ -43,10 +43,7 @@ class JanusVQA:
             trust_remote_code=True
         )
 
-        # Only use bfloat16 when on CUDA
-        if self.device.type == "cuda":
-            self.vl_gpt = self.vl_gpt.to(torch.bfloat16)
-        self.vl_gpt = self.vl_gpt.to(self.device).eval()
+        self.vl_gpt = self.vl_gpt.to(torch.bfloat16).to(self.device).eval()
 
     def _get_device(self) -> torch.device:
         """Determine the appropriate device to use."""
