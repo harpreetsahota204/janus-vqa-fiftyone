@@ -6,7 +6,7 @@ import fiftyone.operators as foo
 from fiftyone.operators import types
 
 with add_sys_path(os.path.dirname(os.path.abspath(__file__))):
-    from vl_gpt_processor import process_dataset
+    from janus_vqa import process_dataset
 
 def _handle_calling(
         uri, 
