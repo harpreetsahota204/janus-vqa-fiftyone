@@ -42,7 +42,7 @@ class JanusVQA:
             model_path, 
             trust_remote_code=True
         )
-        
+
         # Only use bfloat16 when on CUDA
         if self.device.type == "cuda":
             self.vl_gpt = self.vl_gpt.to(torch.bfloat16)
@@ -160,6 +160,7 @@ def process_dataset(
             sample[answer_field] = answer
         except Exception as e:
             print(f"Error processing sample {sample.id}: {str(e)}")
+        sample.save()
     
     # Save the entire dataset
     dataset.save()
