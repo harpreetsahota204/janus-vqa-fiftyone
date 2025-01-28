@@ -7,16 +7,7 @@ Janus-Pro is an advanced multimodal model designed for both **multimodal underst
 
 The plugin provides a seamless interface to Janus Pro's visual question understanding capabilities within FiftyOne, offering:
 
-* Multiple vision-language tasks:
-
-  - Image captioning (short or detailed)
-
-  - Visual question answering
-
-  - Object detection
-
-  - Point localization
-
+* vision-language tasks
 
 * Hardware acceleration (CUDA/MPS) when available
 
