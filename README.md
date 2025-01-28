@@ -73,7 +73,6 @@ import fiftyone.operators as foo
 janus_vqa = foo.get_operator("@harpreetsahota/janus_vqa/janus_vqa")
 ```
 
-
 # For vision language tasks
 
 ```python
