@@ -1,5 +1,9 @@
 # 🐋 Janus Pro VQA Plugin
 
+
+![Janus VQA FiftyOne Plugin](./assets/app-ui.png)
+
+
 Janus-Pro is an advanced multimodal model designed for both **multimodal understanding** and visual generation, with a particular emphasis on improvements in understanding tasks. The model's architecture is built upon the concept of decoupled visual encoding, which allows it to handle the differing representation needs of these two types of tasks more effectively.
 
 
