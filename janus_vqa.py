@@ -43,7 +43,7 @@ class JanusVQA:
             trust_remote_code=True
         )
 
-        self.vl_gpt = self.vl_gpt.to(torch.bfloat16).to(self.device).eval()
+        self.vl_gpt = self.vl_gpt.to(self.device).to(torch.bfloat16).eval()
 
     def _get_device(self) -> torch.device:
         """Determine the appropriate device to use."""
