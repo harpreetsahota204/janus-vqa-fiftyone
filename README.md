@@ -4,7 +4,7 @@
 ![Janus VQA FiftyOne Plugin](./assets/app-ui.png)
 
 
-Janus-Pro is an advanced multimodal model designed for both **multimodal understanding** and visual generation, with a particular emphasis on improvements in understanding tasks. The model's architecture is built upon the concept of decoupled visual encoding, which allows it to handle the differing representation needs of these two types of tasks more effectively.
+Janus-Pro is an advanced multimodal model designed for both **multimodal understanding** and visual generation, emphasizing improvements in understanding tasks. The model's architecture is built upon decoupled visual encoding, which allows it to handle the differing representation needs of these two types of tasks more effectively.
 
 
 ### Plugin Overview
@@ -35,7 +35,7 @@ Then, install the plugin:
 fiftyone plugins download https://github.com/harpreetsahota204/janus-vqa-fiftyone
 ```
 
-In order to use the plugin you need to have the following enviornment variable set:
+To use the plugin, you need to have the following environment variable set:
 
 ```python
 import os
@@ -43,7 +43,7 @@ import os
 os.environ['FIFTYONE_ALLOW_LEGACY_ORCHESTRATORS'] = 'true'
 ```
 
-It's recommended to use delegated operations, you can launch a delegated service by opening your terminal and running the following: `fiftyone delegated launch`
+It's recommended to use delegated operations; you can launch a delegated service by opening your terminal and running the following: `fiftyone delegated launch`
 
 ## Usage in FiftyOne App
 
@@ -58,21 +58,21 @@ You can use Janus directly through the FiftyOne App:
 
 Janus-Pro excels in both **multimodal understanding** and **text-to-image generation**. It achieves this by decoupling the visual encoding for these two tasks, which mitigates the conflict between them.
 
-**NOTE:** This plugin only supports the multimodal understanding tasks. Janus-Pro demonstrates superior performance in the following areas:
+**NOTE:** This plugin only supports multimodal understanding tasks. Janus-Pro demonstrates superior performance in the following areas:
 
 *   **General Image Understanding**: Janus-Pro exhibits impressive comprehension when handling inputs from various contexts. This suggests a broad understanding of image content and its relationship to textual descriptions.
 
-*  **Object Recognition and Scene Description**: The model is capable of describing scenes in detail, identifying objects, and understanding their spatial relationships within an image. For example, it can describe a coastal landscape with rock formations, ocean waves, and a beach with cliffs.
+*  **Object Recognition and Scene Description**: The model can describe scenes in detail, identify objects, and understand their spatial relationships within an image. For example, it can describe a coastal landscape with rock formations, ocean waves, and a beach with cliffs.
 
 *   **Landmark Recognition**: Janus-Pro can recognize famous landmarks. For instance, it can identify the West Lake in Hangzhou, China, specifically the Three Pools Mirroring the Moon island.
 
 *   **Text Recognition**: Janus-Pro can perform text recognition within images, such as identifying the text "Serving Soul since Twenty Twelve" on a blackboard.
 
-*   **Understanding of Complex Visual Content**: The model can understand and interpret images with complex scenes, such as the Tom and Jerry themed cake, where it can describe the characters, the cake decorations, and background story.
+* **Understanding of Complex Visual Content**: The model can understand and interpret images with complex scenes, such as the Tom and Jerry-themed cake, where it can describe the characters, the cake decorations, and the background story.
 
 The model's ability to perform well on these varied benchmarks highlights its versatility in handling a range of multimodal understanding tasks. While Janus-Pro shows strong performance in multimodal understanding, it is noted that the input resolution is limited to 384 × 384, which can affect its performance in fine-grained tasks such as OCR.
 
-Whatever the task you are looking for, just pass it in to the `question` parameter in the operator or the UI.
+Whatever the task you are looking for, pass it in to the `question` parameter in the operator or the UI.
 
 ## Operator Usage via SDK
 
@@ -98,7 +98,7 @@ janus_vqa(
 ```
 
 
-If using delegated operation in an notebook, first run: `fiftyone delegated launch` and then use `await` with any of the operations.
+If using delegated operation in a notebook, first run: `fiftyone delegated launch` and then use `await` with any of the operations.
 
 ```python
 await janus_vqa(
