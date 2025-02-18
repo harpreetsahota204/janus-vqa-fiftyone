@@ -5,8 +5,7 @@ from fiftyone.core.utils import add_sys_path
 import fiftyone.operators as foo
 from fiftyone.operators import types
 
-with add_sys_path(os.path.dirname(os.path.abspath(__file__))):
-    from janus_vqa import process_dataset
+from .janus_vqa import process_dataset
 
 def _handle_calling(
         uri, 

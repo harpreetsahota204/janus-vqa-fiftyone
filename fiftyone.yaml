@@ -1,7 +1,7 @@
 name: "@harpreetsahota/janus_vqa"
 authoer: Harpreet Sahota
 description: Run the Janus Models from Deepseek on your Fiftyone Dataset
-version: 1.0.0
+version: 1.0.1
 fiftyone:
   version: "*"
 url: https://github.com/harpreetsahota204/janus-vqa-fiftyone
